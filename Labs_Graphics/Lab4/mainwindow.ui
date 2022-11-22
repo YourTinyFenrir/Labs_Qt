@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>812</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Designer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MyImages.qrc">
+    <normaloff>:/Icons/Images/icon1.ico</normaloff>:/Icons/Images/icon1.ico</iconset>
+  </property>
+  <property name="statusTip">
+   <string comment="Ничего не делаю..."/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_spinBox">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&amp;BoxBuddy</string>
+        </property>
+        <property name="buddy">
+         <cstring>spinBox</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&amp;LineEditBuddy</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QSlider" name="hSlider">
+        <property name="toolTip">
+         <string extracomment="Масштаб в %"/>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksAbove</enum>
+        </property>
+        <property name="tickInterval">
+         <number>10</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_hSlider">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&amp;SliderBuddy</string>
+        </property>
+        <property name="buddy">
+         <cstring>hSlider</cstring>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="button_exit">
+      <property name="text">
+       <string>Exit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="MyImages.qrc">
+        <normaloff>:/Icons/Images/iconExit.ico</normaloff>:/Icons/Images/iconExit.ico</iconset>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="MyPicture" name="widget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>450</width>
+        <height>300</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>812</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;Файл</string>
+    </property>
+    <addaction name="action_Exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Info">
+    <property name="title">
+     <string>&amp;Информация</string>
+    </property>
+    <addaction name="action_About"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Info"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Exit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Выход</string>
+   </property>
+   <property name="toolTip">
+    <string>Выход</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyPicture</class>
+   <extends>QWidget</extends>
+   <header>mypicture.h</header>
+   <container>1</container>
+   <slots>
+    <slot>scaleChanged(int)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="MyImages.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>hSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>221</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>282</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_setInt(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>429</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_setStr(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>496</x>
+     <y>81</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_setStr(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>523</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>scaleChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_exit</sender>
+   <signal>clicked()</signal>
+   <receiver>action_Exit</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>605</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_showScale(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>56</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot_setInt(QString)</slot>
+  <slot>slot_setStr(int)</slot>
+  <slot>slot_showScale(int)</slot>
+ </slots>
+</ui>
