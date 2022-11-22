@@ -1,0 +1,11 @@
+data.o
+dialog.o
+main.o
+mainwindow.o
+myscene.o
+pattern.o
+qrc_source.o
+moc_dialog.o
+moc_mainwindow.o
+moc_myscene.o
+moc_pattern.o

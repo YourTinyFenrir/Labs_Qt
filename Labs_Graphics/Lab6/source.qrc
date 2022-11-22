@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>IconEllipse.ico</file>
+        <file>IconRect.ico</file>
+    </qresource>
+</RCC>
