@@ -1,0 +1,10 @@
+drawsimple.o
+main.o
+mainwindow.o
+mydelegate.o
+mymodel.o
+myrect.o
+moc_drawsimple.o
+moc_mainwindow.o
+moc_mydelegate.o
+moc_mymodel.o
