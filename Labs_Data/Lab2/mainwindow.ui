@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTableView" name="tableView"/>
+      <widget class="DrawSimple" name="drawView" native="true"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>БД</string>
+    </property>
+    <addaction name="action_createConnection"/>
+    <addaction name="action_closeConnection"/>
+    <addaction name="action_createTable"/>
+    <addaction name="action_insertInto"/>
+    <addaction name="action_printTable"/>
+    <addaction name="action_dropTable"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Модель</string>
+    </property>
+    <addaction name="action_initTableModel"/>
+    <addaction name="action_selectTable"/>
+    <addaction name="action_insertRows"/>
+    <addaction name="action_removeRows"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Запрос</string>
+    </property>
+    <addaction name="action_doQuery"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_createConnection">
+   <property name="text">
+    <string>Создать соединение</string>
+   </property>
+  </action>
+  <action name="action_closeConnection">
+   <property name="text">
+    <string>Удалить соединение</string>
+   </property>
+  </action>
+  <action name="action_createTable">
+   <property name="text">
+    <string>Создать таблицу</string>
+   </property>
+  </action>
+  <action name="action_insertInto">
+   <property name="text">
+    <string>Добавить запись</string>
+   </property>
+  </action>
+  <action name="action_printTable">
+   <property name="text">
+    <string>Показать таблицу</string>
+   </property>
+  </action>
+  <action name="action_dropTable">
+   <property name="text">
+    <string>Удалить таблицу</string>
+   </property>
+  </action>
+  <action name="action_initTableModel">
+   <property name="text">
+    <string>Инициализировать модель</string>
+   </property>
+  </action>
+  <action name="action_selectTable">
+   <property name="text">
+    <string>Выбрать таблицу</string>
+   </property>
+  </action>
+  <action name="action_insertRows">
+   <property name="text">
+    <string>Добавить строку</string>
+   </property>
+  </action>
+  <action name="action_removeRows">
+   <property name="text">
+    <string>Удалить строку</string>
+   </property>
+  </action>
+  <action name="action_doQuery">
+   <property name="text">
+    <string>Выполнить</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DrawSimple</class>
+   <extends>QWidget</extends>
+   <header>drawsimple.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
